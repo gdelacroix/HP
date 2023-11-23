@@ -1,5 +1,8 @@
 // src/pages/Characters.jsx
 import { useState, useEffect } from "react";
+import { Card, Row, Col } from "react-bootstrap";
+import "bootstrap/dist/css/bootstrap.min.css";
+import defaultImg from "../assets/default/default.png";
 import "./Characters.css";
 function Characters() {
   const [characters, setCharacters] = useState([]);
@@ -27,7 +30,7 @@ function Characters() {
   return (
     <div>
       <h2>Characters</h2>
-      <ul>
+      {/* <ul>
         {characters.map((data, index) => (
           <div className="cards" key={index}>
             <img src={data.image} alt={data.name} />
@@ -43,7 +46,34 @@ function Characters() {
             <p>Ascendance : {data.ancestry}</p>
           </div>
         ))}
-      </ul>
+      </ul> */}
+      <Row xs={1} md={2} lg={3} xl={4} className="g-4">
+        {characters.map((data, index) => (
+          <Col key={index}>
+            <Card className="cards">
+              <Card.Img
+                variant="top"
+                src={data.image ? data.image : defaultImg}
+                alt={data.name}
+              />
+              <Card.Body>
+                <Card.Title>{data.name}</Card.Title>
+                <Card.Text>Acteur: {data.actor}</Card.Text>
+                <Card.Text>Maison: {data.house}</Card.Text>
+                <Card.Text>Espèces: {data.species}</Card.Text>
+                <Card.Text>
+                  Date d&apos;anniversaire: {data.dateOfBirth}
+                </Card.Text>
+                <Card.Text>Couleur des yeux: {data.eyeColour}</Card.Text>
+                <Card.Text>Couleur de cheveux: {data.hairColour}</Card.Text>
+                <Card.Text>Genre: {data.gender}</Card.Text>
+                <Card.Text>Patronus: {data.patronus}</Card.Text>
+                <Card.Text>Ascendance : {data.ancestry}</Card.Text>
+              </Card.Body>
+            </Card>
+          </Col>
+        ))}
+      </Row>
     </div>
   );
 }
