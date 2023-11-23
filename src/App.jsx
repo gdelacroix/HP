@@ -2,8 +2,8 @@
 // import React from 'react';
 import { BrowserRouter as Router, Route, Link, Routes } from "react-router-dom";
 import Characters from "./pages/Characters";
-// import Spells from './pages/Spells';
-// import Houses from './pages/Houses';
+import Spells from "./pages/spells";
+import Houses from "./pages/houses";
 
 function App() {
   return (
@@ -14,17 +14,19 @@ function App() {
             <li>
               <Link to="/characters">Characters</Link>
             </li>
-            {/* <li>
-              <Link to="/spells">Spells</Link>
+            <li>
+              <Link to="/Spells">Spells</Link>
             </li>
             <li>
-              <Link to="/houses">Houses</Link>
-            </li> */}
+              <Link to="/Houses">Houses</Link>
+            </li>
           </ul>
         </nav>
 
         <Routes>
           <Route path="/characters" element={<Characters />} />
+          <Route path="/Spells" element={<Spells />} />
+          <Route path="/Houses" element={<Houses />} />
         </Routes>
       </div>
     </Router>

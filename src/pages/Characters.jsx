@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { Card, Row, Col } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import defaultImg from "../assets/default/default.png";
-import "./Characters.css";
+import "./pages.css";
 function Characters() {
   const [characters, setCharacters] = useState([]);
 
