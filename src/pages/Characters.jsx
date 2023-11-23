@@ -28,14 +28,14 @@ function Characters() {
     <div>
       <h2>Characters</h2>
       <ul>
-        {characters.map((data) => (
-          <div className="cards">
+        {characters.map((data, index) => (
+          <div className="cards" key={index}>
             <img src={data.image} alt={data.name} />
             <h2>Nom: {data.name}</h2>
             <h3>Acteur: {data.actor}</h3>
             <p>Maison: {data.house}</p>
             <p> Espèces: {data.species}</p>
-            <p>Date d'anniversaire: {data.dateOfBirth}</p>
+            <p>Date d&apos;anniversaire: {data.dateOfBirth}</p>
             <p>Couleur des yeux: {data.eyeColour}</p>
             <p>Couleur de cheveux: {data.hairColour}</p>
             <p>Genre: {data.gender}</p>
